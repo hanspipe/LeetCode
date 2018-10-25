@@ -26,11 +26,10 @@ public class Problem_203_RemoveLinkedListElement {
 		while(cur != null) {
 			if(cur.val == val) {
 				prev.next = cur.next;
-				cur = cur.next;
 			}else {
-				cur = cur.next;
 				prev = prev.next;
 			}
+			cur = cur.next;
 		}
 		return fakeHead.next;
 	}

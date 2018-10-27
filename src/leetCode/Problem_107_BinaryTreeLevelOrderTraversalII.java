@@ -6,6 +6,13 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * 
+ * @author louis
+ * 2018年10月27日
+ * <p>Description: Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+ * (ie, from left to right, level by level from leaf to root).</p>
+ */
 public class Problem_107_BinaryTreeLevelOrderTraversalII {
 	public class TreeNode {
 		int val;
@@ -27,6 +34,7 @@ public class Problem_107_BinaryTreeLevelOrderTraversalII {
 		while(!queue.isEmpty()) {
 			int size = queue.size();
 			List<Integer> list = new ArrayList<>();
+			// 这个循环，将本层节点加入list，将下层入队
 			while(size-- > 0) {
 				TreeNode node = queue.poll();
 				list.add(node.val);
@@ -35,8 +43,10 @@ public class Problem_107_BinaryTreeLevelOrderTraversalII {
 				if(node.right != null)
 					queue.offer(node.right);
 			}
+			// 将list入栈
 			stack.push(list);
 		}
+		// 栈弹出的顺序就是从树的底层到上层
 		while(!stack.isEmpty())
 			res.add(stack.pop());
 		return res;

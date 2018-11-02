@@ -24,6 +24,7 @@ public class Problem_107_BinaryTreeLevelOrderTraversalII {
 		}
 	}
 
+	//层序遍历，先将根节点入队，根节点出队的同时根节点的左右子节点入队，每次所记录的size就是当前层上的节点个数
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<>();
 		Stack<List<Integer>> stack = new Stack<>();

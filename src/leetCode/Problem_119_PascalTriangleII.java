@@ -2,7 +2,7 @@ package leetCode;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Given a non-negative index k where k ¡Ü 33, return the kth index row of the Pascal's triangle.
 public class Problem_119_PascalTriangleII {
 	public List<Integer> getRow(int rowIndex) {
 		List<Integer> res = new ArrayList<>();

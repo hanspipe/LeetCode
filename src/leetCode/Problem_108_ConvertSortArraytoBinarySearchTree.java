@@ -18,6 +18,7 @@ public class Problem_108_ConvertSortArraytoBinarySearchTree {
 	}
 
 	public TreeNode sortedArrayToBST(int[] nums) {
+		//数组长度为0时直接返回null
 		if(nums.length ==0)
 			return null;
 		TreeNode root = this.helper(nums, 0, nums.length-1);
@@ -28,6 +29,7 @@ public class Problem_108_ConvertSortArraytoBinarySearchTree {
 		if (lo > hi)
 			return null;
 
+		//找中点
 		int mid = lo + (hi - lo) / 2;
 		TreeNode node = new TreeNode(nums[mid]);
 		node.left = helper(nums, lo, mid - 1);

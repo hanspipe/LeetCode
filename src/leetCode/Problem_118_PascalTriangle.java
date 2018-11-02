@@ -2,7 +2,7 @@ package leetCode;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 public class Problem_118_PascalTriangle {
 	public List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> triangle = new ArrayList<>();
@@ -15,7 +15,9 @@ public class Problem_118_PascalTriangle {
 		triangle.get(0).add(1);
 
 		for (int rowNum = 1; rowNum < numRows; rowNum++) {
+			// row:当前行
 			List<Integer> row = new ArrayList<>();
+			// prevRow:上一行
 			List<Integer> prevRow = triangle.get(rowNum - 1);
 
 			// The first row element is always 1.
@@ -25,6 +27,7 @@ public class Problem_118_PascalTriangle {
 				row.add(prevRow.get(j - 1) + prevRow.get(j));
 			}
 			
+			// 最后一个
 			row.add(1);
 			
 			triangle.add(row);

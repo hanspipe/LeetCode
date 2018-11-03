@@ -1,5 +1,14 @@
 package leetCode;
-
+/**
+ * 
+ * @author louis
+ * 2018Äê11ÔÂ4ÈÕ
+ * <p>Description: Given an array of numbers nums, 
+ * 
+ * in which exactly two elements appear only once and all the other elements appear exactly twice.
+ * 
+ *  Find the two elements that appear only once.</p>
+ */
 public class Problem_260_SingleNumberIII {
 	public int[] singleNumber(int[] nums) {
         // Pass 1 : 

@@ -1,13 +1,19 @@
 package leetCode;
 
-import java.util.HashSet;
-import java.util.Set;
+/**
+ * 
+ * @author louis
+ * 2018年11月4日
+ * <p>Description: Write a program to check whether a given number is an ugly number.
 
+	Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.</p>
+ */
 public class Problem_263_UglyNumber {
 	public static void main(String[] args) {
 		System.out.println(isUgly(8));
 	}
 
+	// 把所有2,3,5因子除掉, 判断最后剩下的是不是1
 	public static boolean isUgly(int num) {
 		if (num == 0)
 			return false;
@@ -18,15 +24,5 @@ public class Problem_263_UglyNumber {
 		while (num % 5 == 0)
 			num = num / 5;
 		return num == 1;
-	}
-
-	private static boolean isPrime(int n) {
-		if (n > 2)
-			return false;
-		for (int i = 2; i <= Math.sqrt(n); i++) {
-			if (n % i == 0)
-				return false;
-		}
-		return true;
 	}
 }

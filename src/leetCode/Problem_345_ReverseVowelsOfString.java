@@ -1,5 +1,10 @@
 package leetCode;
-
+/**
+ * 
+ * @author louis
+ * 2018年11月4日
+ * <p>Description: Write a function that takes a string as input and reverse only the vowels of a string.</p>
+ */
 public class Problem_345_ReverseVowelsOfString {
 	public static void main(String[] args) {
 		System.out.println(reverseVowels("leetcode"));
@@ -9,9 +14,11 @@ public class Problem_345_ReverseVowelsOfString {
 		if (s == null || s.length() == 0)
 			return s;
 		char[] arr = s.toCharArray();
+		// 双指针
 		int lo = 0;
 		int hi = s.length() - 1;
 		while (lo < hi) {
+			// 不是元音字母就下一个
 			while (lo < hi && !isVowel(arr[lo]))
 				lo++;
 			while (lo < hi && !isVowel(arr[hi]))

@@ -1,5 +1,17 @@
 package leetCode;
 
+/**
+ * 
+ * @author louis
+ * 2018Äê11ÔÂ4ÈÕ
+ * <p>Description: You are given a binary tree in which each node contains an integer value.
+
+	Find the number of paths that sum to a given value.
+
+	The path does not need to start or end at the root or a leaf,
+
+ 	but it must go downwards (traveling only from parent nodes to child nodes).</p>
+ */
 public class Problem_437_PathSumIII {
 	public class TreeNode {
 		int val;

@@ -19,7 +19,6 @@ public class Problem_476_NumberComplement {
 			i += Math.pow(2, j);
 			j++;
 		}
-
 		return i - num;
 	}
 }

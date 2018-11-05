@@ -1,5 +1,13 @@
 package leetCode;
 
+/**
+ * 
+ * @author louis
+ * 2018年11月5日
+ * <p>Description: Given a string, you need to reverse the order of characters in each word 
+ * 
+ * 	within a sentence while still preserving whitespace and initial word order.</p>
+ */
 public class Problem_557_ReverseWordsinaStringIII {
 
 	public static void main(String[] args) {
@@ -12,6 +20,7 @@ public class Problem_557_ReverseWordsinaStringIII {
 		String[] words = s.split(" ");
 		String res = "";
 		for (int i = 0; i < words.length; i++) {
+			// 不是最后一个词就在后面加上空格
 			if (i != words.length - 1) {
 
 				res += (reverseWord(words[i]) + " ");

@@ -3,7 +3,18 @@ package leetCode;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+/**
+ * 
+ * @author louis
+ * 2018年11月5日
+ * <p>Description: We define a harmonious array is an array where the difference between 
+ * 
+ * its maximum value and its minimum value is exactly 1.
 
+	Now, given an integer array, you need to find the length of its 
+
+	longest harmonious subsequence among all its possible subsequences.</p>
+ */
 public class Problem_594_LongestHarmoniousSubsequence {
 
 	// 暴力

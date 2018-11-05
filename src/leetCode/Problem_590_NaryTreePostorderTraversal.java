@@ -25,7 +25,7 @@ public class Problem_590_NaryTreePostorderTraversal {
 		if(root == null)
 			return list;
 		for(Node node : root.children)
-			postorder(node);
+			postorder1(node);
 		list.add(root.val);
 		return list;
 	}

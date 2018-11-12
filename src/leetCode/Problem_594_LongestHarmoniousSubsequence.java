@@ -41,17 +41,21 @@ public class Problem_594_LongestHarmoniousSubsequence {
 	public int findLHS2(int[] nums) {
 		Arrays.sort(nums);
 		int res = 0;
+		// prev_count: 后面那个数的个数
 		int prev_count = 1;
 		for (int i = 0; i < nums.length; i++) {
+			// 前面那个数的个数
 			int count = 1;
 			if (i > 0 && nums[i] - nums[i - 1] == 1) {
 				while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
 					count++;
 					i++;
 				}
+				// count + prev_count就是当前这个harmonious subsequence的长度
 				res = Math.max(res, count + prev_count);
+				// 更新prev_count
 				prev_count = count;
-			} else {
+			} else {// 
 				while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
 					count++;
 					i++;
@@ -67,10 +71,13 @@ public class Problem_594_LongestHarmoniousSubsequence {
 	public int findLHS3(int[] nums) {
 		int res = 0;
 		Map<Integer, Integer> map = new HashMap<>();
+		// 每个数及其出现的次数存入map
 		for (int n : nums)
 			map.put(n, map.getOrDefault(n, 0) + 1);
 
+		// 遍历key
 		for (Integer key : map.keySet()) {
+			// 
 			if (map.containsKey(key + 1))
 				res = Math.max(res, map.get(key) + map.get(key + 1));
 		}

@@ -1,7 +1,16 @@
 package leetCode;
 
 import java.util.Scanner;
+/**
+ * 
+ * @author louis
+ * 2018Äê11ÔÂ12ÈÕ
+ * <p>Description: Given a string, your task is to count how many palindromic substrings in this string.
 
+	The substrings with different start indexes or end indexes are 
+	
+	counted as different substrings even they consist of same characters.</p>
+ */
 public class Problem_647_PalindromicSubstrings {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

@@ -2,9 +2,16 @@ package leetCode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 
+ * @author louis
+ * 2018Äê11ÔÂ12ÈÕ
+ * <p>Description: Given an n-ary tree, return the postorder traversal of its nodes' values.</p>
+ */
 public class Problem_590_NaryTreePostorderTraversal {
 	class Node {
 		public int val;
@@ -47,5 +54,25 @@ public class Problem_590_NaryTreePostorderTraversal {
 		}
 		Collections.reverse(list);
 		return list;
+	}
+	
+	
+	// Iteration
+	public List<Integer> postOrder(Node root){
+		Stack<Node> stack = new Stack<>();
+		LinkedList<Integer> output = new LinkedList<>();
+		if(root == null)
+			return output;
+		
+		stack.push(root);
+		while(!stack.isEmpty()) {
+			Node node = stack.pop();
+			output.addFirst(node.val);
+			for(Node item : node.children) {
+				if(item != null)
+					stack.push(item);
+			}
+		}
+		return output;
 	}
 }

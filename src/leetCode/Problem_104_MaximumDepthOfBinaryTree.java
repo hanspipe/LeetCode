@@ -72,7 +72,6 @@ public class Problem_104_MaximumDepthOfBinaryTree {
 				stack.push(node.right);
 				value.push(tmp + 1);
 			}
-
 		}
 		return max;
 	}

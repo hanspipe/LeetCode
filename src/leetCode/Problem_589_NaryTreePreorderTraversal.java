@@ -1,8 +1,10 @@
 package leetCode;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class Problem_589_NaryTreePreorderTraversal {
 
@@ -20,26 +22,17 @@ public class Problem_589_NaryTreePreorderTraversal {
 	}
 
 	public List<Integer> preorder(Node root) {
-		LinkedList<Node> stack = new LinkedList<>();
-		List<Integer> output = new LinkedList<>();
-
-		if (root == null)
-			return output;
-
-		// 根节点入栈
-		stack.add(root);
-		while (!stack.isEmpty()) {
-			// 当前节点出栈
-			Node node = stack.pollLast();
-			// 当前节点的值存入List
-			output.add(node.val);
-			// 将当前节点的孩子节点置逆, 因为输出顺序是从左往右, 所以入栈就要从右往左, 
-			// 与二叉树相似, 入栈顺序是先右后左
-			Collections.reverse(node.children);
-			// 将子节点从右往左依次入栈.
-			for (Node item : node.children)
-				stack.add(item);
-		}
-		return output;
+		  List<Integer> list = new ArrayList<>();
+	        Stack<Node> stack = new Stack<>();
+	        if(root == null)
+	            return null;
+	        stack.push(root);
+	        while(!stack.isEmpty()){
+	            Node node = stack.pop();
+	            list.add(node.val);
+	            for(int i = node.children.size() -1 ; i >= 0; i--)
+	                stack.push(node.children.get(i));
+	        }
+	        return list;
 	}
 }

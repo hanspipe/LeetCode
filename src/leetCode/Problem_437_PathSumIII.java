@@ -29,7 +29,6 @@ public class Problem_437_PathSumIII {
 			return 0;
 		return pathSumFrom(root, sum) + pathSumFrom(root.left, sum) + pathSumFrom(root.right, sum);
 	}
-
 	private static int pathSumFrom(TreeNode node, int sum) {
 		if (node == null)
 			return 0;
